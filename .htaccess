@@ -1,6 +1,4 @@
 RewriteEngine On
-#RewriteCond %{SERVER_PORT} 80
-#RewriteRule ^(.*)$ https://www.puretosushi.com/$1 [R,L]
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
