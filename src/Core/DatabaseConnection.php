@@ -7,7 +7,7 @@ class DatabaseConnection
     public static function getDatabaseConnection()
     {
         if (!isset(self::$instance)) {
-            $dbname = '';
+            $dbname = 'estudos';
             $host = 'localhost';
             $user = 'root';
             $password = '';
