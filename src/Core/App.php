@@ -35,6 +35,8 @@ class App
 			//caso sim, atribui aos parametros
 			if (count($url) > 0) {
 				$params = $url;
+			} else {
+				$params = array();
 			}
 
 		} else {
