@@ -1,9 +1,9 @@
 <?php
 
-class Home
+class Home extends Controller
 {
 	public function index()
 	{
-		echo "Olá Mundo!";
+		$this->loadView('home');
 	}
 }
