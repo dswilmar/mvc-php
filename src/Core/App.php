@@ -38,7 +38,21 @@ class App
 			}
 
 		} else {
-			$controller = 'home';
+			$controller = 'Home';
+			$method = 'index';
+			$params = array();
 		}
+
+		//caso o controller/método não exitam, atribui o padrão 
+		$path = './app/Controllers/' . $controller . '.php';
+
+		if (!file_exists($path) && !method_exists($controller, $method)) {
+			$controller = 'Home';
+			$method = 'index';
+		}
+
+		//instanciando o controller e chamando o método passado
+		$c = new $controller;
+		call_user_func_array(array($c, $method), $params);
 	}
 }
