@@ -12,12 +12,6 @@ class Controller
 		$this->data = array();
 	}
 
-	public function loadTemplate($template, $data = array())
-	{
-		$this->data = $data;
-		require './app/Views/template.php';
-	}
-
 	public function loadView($view, $data = array())
 	{
 		extract($data);
