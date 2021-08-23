@@ -14,16 +14,16 @@ class Model
     public function query($sql, $params = array())
     {
         $result = array();
-        $this->databaseConnection->prepare($sql);
+        $cmd = $this->databaseConnection->prepare($sql);
         if (count($params) > 0) {
             foreach ($params as $key => $value) {
-                $this->databaseConnection->bindValue($key, $value);
+                $cmd->bindValue($key, $value);
             }
         }
-        $this->databaseConnection->execute();
-        while ($row = $this->databaseConnection->fetch(PDO::FETCH_ASSOC)) {
-            array_push($row, $result);
-        }
+        $cmd->execute();        
+        while ($row = $cmd->fetch(PDO::FETCH_ASSOC)) {            
+            array_push($result, $row);
+        }        
         return $result;
     }
 }
