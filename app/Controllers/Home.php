@@ -4,6 +4,8 @@ class Home extends Controller
 {
 	public function index()
 	{
-		$this->loadView('home');
+		$userModel = $this->loadModel('User_model');
+		$users = $userModel->getUsers();
+		print_r($users);				
 	}
 }
